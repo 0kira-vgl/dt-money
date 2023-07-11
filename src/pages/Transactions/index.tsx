@@ -2,14 +2,14 @@ import { Header } from "../../components/Header";
 import { Summary } from "../../components/Summary";
 import { SearchForm } from "./components/SearchForm";
 import { TransactionsContext } from "../../contexts/TransactionsContext";
+import { dateFormatter, priceFormatter } from "../../utils/formatter";
+import { useContextSelector } from "use-context-selector";
+import "./scroll.css";
 import {
   PriceHighLight,
   TransactionsContainer,
   TransactionsTable,
 } from "./styles";
-import { dateFormatter, priceFormatter } from "../../utils/formatter";
-import { useContextSelector } from "use-context-selector";
-import "./style.css";
 
 export function Transactions() {
   const transactions = useContextSelector(TransactionsContext, (context) => {
